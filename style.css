@@ -1,0 +1,195 @@
+:root {
+  --color-blue: #555; 
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'],
+li {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+    background-color: #333;
+    display: grid;
+    grid-template-areas: "header header header header header header header header header header header header"
+                          "sidebar article article article article article article article article article article article"
+                          "sidebar article article article article article article article article article article article"
+                          "sidebar footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    text-transform: uppercase;
+    background-color: #fff;
+    grid-area: header;
+}
+
+.button {
+    background-color: var(--color-blue);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 900;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: var(--color-blue);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 900;
+    border-radius: 10px;
+    padding: 5px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.modal {
+    padding: 20px;
+    margin: 10% auto;
+    border: 1px solid #888;
+    background-color: #fefefe;
+}
+
+#submit-button:hover,
+#submit-button:focus,
+.open-button:hover,
+.delete-button:hover {
+  background-color: #333;
+  cursor: pointer;
+}
+
+#status {
+  width: 100%;
+  padding: 5px 0;
+}
+
+.control {
+    padding: 10px 0;
+}
+
+.article {
+    margin-top: 90px;
+    margin-left: 125px;
+    grid-area: article;
+    min-height: 75vh;
+}
+
+.left-sidebar {
+  margin-top: 87px;
+  position: fixed;
+  left: 0;
+  overflow: hidden;
+  width: 15%;
+  height: 550px;
+  background-color: #fff;
+  color: #00002c;
+  border: 2px solid #fff;
+  padding: 0 10px;
+  font-size: 20px;
+  text-align: left;
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 100px;
+
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    padding: 20px;
+    
+}
+
+.card {
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    word-spacing: 10px;
+    text-transform: uppercase;
+    grid-area: footer;
+}

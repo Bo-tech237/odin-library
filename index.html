@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Library</title>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="header">
+                <div class="logo">logo</div>
+                <button class="button open-button">New Book</button>
+                <div class="nav-text">Library</div>
+            </div>
+
+            <div class="left-sidebar">
+                <hi>LIBRARY LOG</hi>
+                <p class="book-count">Number of books:</p>
+                <p class="book-read">Books read:</p>
+            </div>
+
+            <div class="article">
+                <div class="card-container"></div>
+            </div>
+
+            <div class="footer">
+                <p>Copyright © BOKALLI FERDINAND 2022</p>
+            </div>
+        </div>
+        <dialog class="modal" id="modal">
+                <h1>Fill Book Information</h1>
+                <form action="#" method="dialog">
+                    <div class="control">
+                        <label for="book-title">Book title*</label><br>
+                        <input type="text" id="book-title" required>
+                    </div>
+                    <div class="control">
+                        <label for="book-author">Book Author*</label><br>
+                        <input type="text"  id="book-author" required>
+                    </div>
+                    <div class="control">
+                        <label for="book-pages">Number of Pages*</label><br>
+                        <input type="number"  id="book-pages" required>
+                    </div>
+                    <div class="control">
+                        <label for="status">Status</label><br>
+                        <select name="status" id="status">
+                            <option value="not-read">Not Read</option>
+                            <option value="read">Read</option>
+                        </select>
+                    </div>
+                    <div class="control">
+                        <button class="button" id="submit-button">Submit</button>
+                    </div>
+                </form>
+        </dialog>
+
+    </body>
+</html>

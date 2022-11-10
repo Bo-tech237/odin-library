@@ -9,20 +9,21 @@ const bookRead = document.querySelector('.book-read');
 let myLibrary = [];
 let newBook;
 
-function Book(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
+class Book {
+    constructor (title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 
-Book.prototype.bookInfo = function(){
-    return `Title: ${this.title} <br> 
-            Author: ${this.author} <br>
-            Pages: ${this.pages} <br> 
-            Read: ${this.read} <br>`;
+    bookInfo = () => {
+        return `Title: ${this.title} <br> 
+                Author: ${this.author} <br>
+                Pages: ${this.pages} <br> 
+                Read: ${this.read} <br>`;
+    }
 }
-
 
 const getBookFromInput = () => {
     const title = document.getElementById('book-title').value
